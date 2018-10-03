@@ -1,7 +1,7 @@
 baseURL: http://something-fresh.org/
 languageCode: en-us
 title: Welcome to B.NET
-theme: bdotnet-fresh
+theme: "Hugo Fresh"
 
 params:
   font:
