@@ -1,0 +1,146 @@
+baseURL: http://something-fresh.org/
+languageCode: en-us
+title: Welcome to B.NET
+theme: bdotnet-fresh
+
+params:
+  font:
+    name: "Open Sans"
+    sizes: [400,600]
+  hero:
+    # Main hero title
+    title: Welcome to B.NET
+    # Hero subtitle (optional)
+    subtitle: This User Group is about helping you understand the .NET Framework, show how it will make you more productive and transition your development processes to the same, amongst other things. Detailed technical insights are presented by Microsoft RDs, .NET MVPs in the technical sessions conducted periodically.
+    # Button text
+    buttontext: Join Us
+    # Where the main hero button links to
+    buttonlink: "#"
+    # Hero image (from /images/___)
+    image: illustrations/worker.svg
+    # Footer logos (from /images/logos/clients/___.svg)
+    clientlogos:
+    - Microsoft.png
+    - logo_gnostice_top.png
+    - jetbrains.svg
+    - RevDeBug.png
+    - Syncfusion_Logo.png
+  # Customizable navbar. For a dropdown, add a "sublinks" list.
+  navbar:
+  - title: About Us
+    url: /#about-us
+  - title: Upcoming Meetups
+    url: /#upcoming-meetups
+  - title: Our Sponsors
+    url: /#sponsors
+  - title: Our Community
+    url: /#community
+  - title: Join Us
+    url: /#join-us
+    button: true
+  sidebar:
+    # Logo (from /images/logos/___.svg)
+    logo: bdotnet-logo.png
+    sections:
+    - title: User
+      icon: user
+      links:
+      - text: Profile
+        url: /
+      - text: Account
+        url: /
+      - text: Settings
+        url: /
+    - title: Messages
+      icon: envelope
+      links:
+      - text: Inbox
+        url: /
+      - text: Compose
+        url: /
+    - title: Images
+      icon: image
+      links:
+      - text: Library
+        url: /
+      - text: Upload
+        url: /
+    - title: Settings
+      icon: cog
+      links:
+      - text: User settings
+        url: /
+      - text: App settings
+        url: /
+  section1:
+    title: Upcoming Meetups
+    subtitle: Join us to learn more!
+    tiles:
+    - title: App builder
+      icon: mouse-globe
+      text: Build your webapp easily with Hugo
+      url: /
+      buttonText: 6-Oct-2018
+    - title: Cloud integration
+      icon: laptop-cloud
+      text: Feel the power of Docker on your machine
+      url: /
+      buttonText: 6-Oct-2018
+    - title: Add-ons & plugins
+      icon: plug-cloud
+      text: See your Docker getting deployed on Kubernetes
+      url: /
+      buttonText: 6-Oct-2018
+  section2:
+    title: You're here because you want the best
+    subtitle: And we know it
+    features:
+    - title: Powerful and unified interface
+      text: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu pellentesque tortor vestibulum ut. Maecenas non massa sem. Etiam finibus odio quis feugiat facilisis.
+      # Icon (from /images/illustrations/icons/___.svg)
+      icon: laptop-globe
+    - title: Cross-device synchronisation
+      text: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu pellentesque tortor vestibulum ut. Maecenas non massa sem. Etiam finibus odio quis feugiat facilisis.
+      icon: doc-sync
+    - title: Nomad system
+      text: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu pellentesque tortor vestibulum ut. Maecenas non massa sem. Etiam finibus odio quis feugiat facilisis.
+      icon: mobile-feed
+  section3:
+    title: B.NET, One Place
+    subtitle: Learn everything
+    image: illustrations/mockups/app-mockup.png
+    buttonText: Join Us
+    buttonLink: "#"
+  section4:
+    title: Our Clients love us!
+    subtitle: Lorem ipsum sit dolor amet is a dummy text used by typography industry
+    clients:
+    - name: Irma Walters
+      quote: Lorem ipsum dolor sit amet, elit deleniti dissentias quo eu, hinc minim appetere te usu, ea case duis scribentur has. Duo te consequat elaboraret, has quando suavitate at.
+      job: Accountant
+      img: 1
+    - name: John Bradley
+      quote: Lorem ipsum dolor sit amet, elit deleniti dissentias quo eu, hinc minim appetere te usu, ea case duis scribentur has. Duo te consequat elaboraret, has quando suavitate at.
+      job: Financial Analyst
+      img: 2
+    - name: Gary Blackman
+      quote: Lorem ipsum dolor sit amet, elit deleniti dissentias quo eu, hinc minim appetere te usu, ea case duis scribentur has. Duo te consequat elaboraret, has quando suavitate at.
+      job: HR Manager
+      img: 3
+  footer:
+    # Logo (from /images/logos/___)
+    logo: bdotnet-logo.png
+    # Social media links (GitHub, Twitter, etc.). All are optional.
+    socialmedia:
+    - link: https://github.com/lucperkins/github-fresh
+      # Icons are from Font Awesome
+      icon: github
+    - link: https://dribbble.com/#
+      icon: dribbble
+    - link: https://facebook.com/#
+      icon: facebook
+    - link: https://twitter.com/lucperkins
+      icon: twitter
+    - link: https://bitbucket.org/#
+      icon: bitbucket
+    bulmalogo: true
