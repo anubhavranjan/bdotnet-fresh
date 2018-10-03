@@ -1,4 +1,4 @@
-baseURL: http://something-fresh.org/
+baseURL: http://localhost/
 languageCode: en-us
 title: Welcome to B.NET
 theme: bdotnet-fresh
