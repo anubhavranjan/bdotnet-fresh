@@ -1,33 +1,25 @@
+FROM nginx:alpine
+MAINTAINER Anubhav Ranjan <anubhavranjan@microsoft.com>
 
-# Credit to Julien Guyomard (https://github.com/jguyomard). This Dockerfile
-# is essentially based on his Dockerfile at
-# https://github.com/jguyomard/docker-hugo/blob/master/Dockerfile. The only significant
-# change is that the Hugo version is now an overridable argument rather than a fixed
-# environment variable.
+ENV HUGO_VERSION="0.20"
+ENV GITHUB_USERNAME="anubhavranjan"
+ENV DOCKER_IMAGE_NAME="bdotnet-fresh"
 
-FROM alpine:latest
+USER root
 
-MAINTAINER Luc Perkins <lperkins@linuxfoundation.org>
-
-RUN apk add --no-cache \
-    curl \
+RUN apk add --update \
+    wget \
     git \
-    openssh-client \
-    rsync \
-    build-base \
-    libc6-compat
+    ca-certificates
 
-ARG HUGO_VERSION
+RUN wget --quiet https://github.com/spf13/hugo/releases/download/v${HUGO_VERSION}/hugo_${HUGO_VERSION}_Linux-64bit.tar.gz && \
+    tar -xf hugo_${HUGO_VERSION}_Linux-64bit.tar.gz && \
+    chmod +x hugo_${HUGO_VERSION}_linux_amd64/hugo_${HUGO_VERSION}_linux_amd64 && \
+    mv hugo_${HUGO_VERSION}_linux_amd64/hugo_${HUGO_VERSION}_linux_amd64 /usr/local/bin/hugo && \
+    rm -rf hugo_${HUGO_VERSION}_linux_amd64/ hugo_${HUGO_VERSION}_Linux-64bit.tar.gz
 
-RUN mkdir -p /usr/local/src && \
-    cd /usr/local/src && \
-    curl -L https://github.com/gohugoio/hugo/releases/download/v0.49/hugo_extended_0.49_linux-64bit.tar.gz | tar -xz && \
-    mv hugo /usr/local/bin/hugo && \
-    curl -L https://bin.equinox.io/c/dhgbqpS8Bvy/minify-stable-linux-amd64.tgz | tar -xz && \
-    mv minify /usr/local/bin && \
-    addgroup -Sg 1000 hugo && \
-    adduser -Sg hugo -u 1000 -h /src hugo
+RUN git clone https://github.com/${GITHUB_USERNAME}/${DOCKER_IMAGE_NAME}.git
 
-WORKDIR /src
+RUN hugo -s ${DOCKER_IMAGE_NAME} -d /usr/share/nginx/html/ --uglyURLs
 
-EXPOSE 1313
+CMD nginx -g "daemon off;"
